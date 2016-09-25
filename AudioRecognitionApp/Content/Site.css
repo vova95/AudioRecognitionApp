@@ -1,0 +1,63 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.menu {
+    float: right;
+}
+
+.main-container {
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 50px;
+}
+
+.admin-container {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+}
+
+.result-container {
+    min-height: 345px;
+}
+
+.create-container, .pagination-container {
+    text-align: center;
+}
+
+.edit-container {
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.btn-edit {
+    margin-top: 25px;
+}
+
+.form-container {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 10px;
+    float: right;
+}
+
+.btn-recognize {
+    margin-top: 25px;
+}

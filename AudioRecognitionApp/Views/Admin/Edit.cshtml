@@ -1,0 +1,15 @@
+﻿@model AudioRecognitionApp.BLL.DTO.SongDTO
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+@using (Html.BeginForm())
+{
+    <div class="edit-container">
+        @Html.Hidden("id", Model.Id)
+        <input type="text" value="@Model.Name" name="name" class="form-control"/>
+        <input type="submit" class="btn btn-warning btn-edit" value="Update"/>
+    </div>
+}
+

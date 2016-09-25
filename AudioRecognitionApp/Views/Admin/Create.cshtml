@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="main-container">
+    <div class="form-container" style="text-align: center">
+        @using (Html.BeginForm("create", "admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" accept="audio/mp3, audio/wav" name="files" id="selectedFile" style="display: none;" multiple />
+            <div class="input-group">
+                <input type="text" value="" class="form-control" id="file-path" readonly />
+                <span class="input-group-btn">
+                    <input type="button" class="btn btn-warning" value="Browse Song" onclick="document.getElementById('selectedFile').click();">
+                </span>
+            </div>
+            <input type="submit" value="Add" class="btn btn-warning btn-recognize" />
+        }
+    </div>
+</div>
