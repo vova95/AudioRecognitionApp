@@ -61,3 +61,32 @@
 .btn-recognize {
     margin-top: 25px;
 }
+
+#loader {
+    border: 7px solid #f3f3f3; /* Light grey */
+    border-top: 7px solid #149c82; /* Blue */
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: none;
+    position: fixed;
+    z-index: 999;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    -ms-animation: spin 2s linear infinite;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -7,7 +7,7 @@
 
 <div class="main-container">
     <div class="form-container" style="text-align: center">
-        @using (Html.BeginForm("Index", "Main", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        @using (Html.BeginForm("Index", "Main", FormMethod.Post, new { id = "upload-form", enctype = "multipart/form-data" }))
         {
             <input type="file" accept="audio/mp3, audio/wav" name="file" id="selectedFile" style="display: none;" />
             <div class="input-group">
@@ -20,7 +20,9 @@
         }
     </div>
     @if (Model != null)
-            {
+    {
+
+        
         <table class="table table-striped table-bordered table-sm">
             <thead>
                 <tr>
@@ -43,11 +45,16 @@
                 }
             </tbody>
         </table>
-        <canvas id="chart-canvas" height="250" style="margin-top: 25px;"></canvas>
+        <canvas id="chart-canvas" height="200" style="margin-top: 25px;"></canvas>
         <script type="text/javascript">
-            var labels = @Html.Raw(Json.Encode(Model.Select(item => item.Name).ToList()));
+            @{
+                List<int> items = new List<int>(Model.Count);
+                Model.ForEach(el => items.Add(Model.IndexOf(el) + 1));
+            }
+            var labels = @Html.Raw(Json.Encode(items.Select(item => item).ToList()));
             var data = @Html.Raw(Json.Encode(Model.Select(item => item.TotalMatches.TotalMatches).ToList()));
             createChart(labels, data);
         </script>
     }
+    <div id="loader"></div>
 </div>

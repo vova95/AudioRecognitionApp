@@ -9,4 +9,8 @@
         $("#file-path").val(fileName);
 
     });
+
+    $("#upload-form").submit(function (e) {
+        $("#loader").show();
+    });
 });
